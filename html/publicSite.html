@@ -40,7 +40,7 @@ body { background-color: #FAFAFA; }
  <div class="hero_data">
   <div class="name_wrap">
    <div class="name_data">
-    <img src="../pics/home_star.png" ng-click="goHome()"/>
+    <img src="../pics/home_star.png"/>
     <p>City Street Art</p>
    </div><!-- . name_data - --> 
   </div><!-- . name_wrap - -->
@@ -49,10 +49,11 @@ body { background-color: #FAFAFA; }
    <div class="list_wrap">
     <div class="list_item">
      <a href="{{ login_key }}">
-      <img class="login_icon-[! login_icon !]"src="../pics/login_icon.png"/>
+      <img class="logout_icon" src="../pics/login_icon.png"/>
      {% if user_name != 'No User' %}
+      <img class="login_icon" src="../pics/logged_in.png"/>
       <div class="username_wrap">{{ user_name }}</div>
-      <img src="../pics/logged_in.png"/>
+      <style> .logout_icon { display: none; } </style>
      {% endif %}
      </a>
     </div>
@@ -76,7 +77,7 @@ body { background-color: #FAFAFA; }
  </div><!-- . hero_data - -->
 </header><!-- . hero_wrap- -->
 
-[! open_map !] hi [! login_icon !]
+[! open_map !] hi
 
 {{ page_html|safe }}
 

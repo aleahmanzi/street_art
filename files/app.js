@@ -90,8 +90,6 @@ function geoFindMe() {
 
 /// - Geo Location
 
-
-
 var demo = angular.module("demo", [],
   function($interpolateProvider) {
     $interpolateProvider.startSymbol('[!');
@@ -103,6 +101,7 @@ demo.controller('ctrl', function($scope, $http, $filter){
 
   $scope.fileDetails = 'no';
   $scope.fileSelect = 'yes';
+  $scope.login_icon = 'yes';
   $scope.latitude = '';
   $scope.longitude = '';
 
