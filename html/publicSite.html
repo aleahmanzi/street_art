@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo" ng-controller="ctrl">
+<head>
+  <meta charset="UTF-8">
+  <title>City Street Art</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> 
+  <script type="text/javascript" src="../../files/angular.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lobster|Hind:600,400' rel='stylesheet' type='text/css'>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWyM15_zPN07OH1G3AMUOSWPCHv40ZFSo&v=3.exp&signed_in=true&libraries=places"></script>
+  <script type="text/javascript" src="../../files/app.js"></script>
+
+<style>
+body { background-color: #FAFAFA; }
+.hero_wrap { outline: 0px solid #DBDBDB; background-color: white; width: 100%; float: right; height: 80px; border-bottom: 1px solid #DBDBDB; padding-right: 7px; margin-top: -7px; } 
+.name_wrap { outline: 0px solid black; display: inline-block; }
+.name_data { outline: 0px solid blue; font-size: 25px; color: #444; font-family: "Rock Salt"; position: relative; }
+.name_data p { outline: 0px solid blue; display: inline-block; position: relative; bottom: 15px; }
+.name_data img { outline: 0px solid red; height: 60px; padding-right: 15px; position: relative; padding-left: 10px; cursor: pointer; }
+
+.nav_list { outline: 0px solid black; position: relative; bottom: 90px; }
+.list_wrap { outline: 0px solid red; text-align: right; font-family: "Hind"; font-size: 30px; cursor: pointer; position: relative; display: inline-block; float: right;}
+.list_item { outline: 0px solid blue; margin: 0 auto; }
+.list_item img { outline: 0px solid black; height: 35px; padding-right: 40px; position: relative; top: 5px; }
+.username_wrap { outline: 0px solid red; font-size: 12px; position: relative; bottom: 10px;  }
+
+.map_wrap { outline: 0px solid blue; }
+#map_canvas { outline: 0px solid red; width: 700px; height: 500px; margin: 0 auto; position: relative; }
+.item_wrap { outline: 0px solid red; width: 100%; }
+.button_wrap { outline: 0px solid blue; margin: 0 auto; width: 125px; }
+#geoFindMe { cursor: pointer; border: 1px solid #212121; width: 125px; text-align: center; font-size: 14px; border-radius: 5px; color: #212121; }
+#geoFindMe :hover { border: 1px solid #eee; color: #eee; }
+
+</style>
+
+</head>
+<body onload="initialize()">
+
+<header class="hero_wrap">
+ <div class="hero_data">
+  <div class="name_wrap">
+   <div class="name_data">
+    <img src="../pics/home_star.png" ng-click="goHome()"/>
+    <p>City Street Art</p>
+   </div><!-- . name_data - --> 
+  </div><!-- . name_wrap - -->
+
+   <div class="nav_list">
+   <div class="list_wrap">
+    <div class="list_item">
+     <a href="{{ login_key }}">
+      <img class="login_icon-[! login_icon !]"src="../pics/login_icon.png"/>
+     {% if user_name != 'No User' %}
+      <div class="username_wrap">{{ user_name }}</div>
+      <img src="../pics/logged_in.png"/>
+     {% endif %}
+     </a>
+    </div>
+   </div><!-- . list_wrap - --> 
+   <div class="list_wrap">
+    <div class="list_item">
+     <a href="../../gallery"> <img src="../pics/pics_icon.png"/></a>
+    </div> 
+   </div><!-- . list_wrap - --> 
+   <div class="list_wrap">
+    <div class="list_item">
+     <a href="../../location"><img src="../pics/loc_pin.png"/></a>
+    </div>
+   </div><!-- . list_wrap - --> 
+   <div class="list_wrap">
+    <div class="list_item">
+     <a href="../../upload"><img src="../pics/load_pic.png"/></a>
+    </div>
+   </div><!-- . list_wrap - -->
+  </div><!-- . nav_list - -->
+ </div><!-- . hero_data - -->
+</header><!-- . hero_wrap- -->
+
+[! open_map !] hi [! login_icon !]
+
+{{ page_html|safe }}
+
+  
+</body>
+</html>

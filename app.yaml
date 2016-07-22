@@ -1,0 +1,24 @@
+application: city-street-art
+version: 1-manzi
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: pics/favicon.ico
+  upload: pics/favicon\.ico
+
+- url: /files
+  static_dir: files
+
+- url: /fonts
+  static_dir: fonts
+
+- url: /pics
+  static_dir: pics
+
+- url: /.*
+  script: city-street-art.app
+  secure: always
